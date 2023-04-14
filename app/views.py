@@ -31,3 +31,21 @@ def insert_webpages(request):
     return render(request,'insert_webpages.html',d)
 
 
+def insert_accessrecord(request):
+    if request.method=='POST':
+        n=request.POST['topic']
+        WO=Webpages.objects.get(name=n)
+        WO.save()
+          
+        d=request.POST['d']
+        a=request.POST['a']
+        AO=AccessRecord.objects.get_or_create(name=WO, author=a,date=d)[0]
+        AO.save()
+        return HttpResponse('accessrecord inserted in successfully')
+
+    LOA=Webpages.objects.all()
+    d={'topic':LOA}
+    return render(request,'insert_accessrecord.html',d)
+
+
+

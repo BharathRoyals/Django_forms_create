@@ -10,13 +10,20 @@
     <center>
         <h1>The Insert date in AccessRecord</h1>
         <form method="POST">
-            {% csrf_token %}
-            <label for="n">name</label>
-            <input type="text" name="n" id="n"><br>
+            <h1>{% csrf_token %}</h1>
+            <label for="topic">name</label>
+
+            <select name="topic" id="name">
+                {% for wo in topic %} 
+                <option value="{{wo}}">{{wo.name}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            
             <label for="a">author</label>
             <input type="text" name="a" id="a"><br>
             <label for="d">date</label>
-            <input type="text" name="d" id="d"><br>
+            <input type="date" name="d" id="d"><br>
             <input type="submit" value="accessrecord">
         </form>
     </center>
