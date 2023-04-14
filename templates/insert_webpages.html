@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>The insert date in successfully.</h1>
+        <form method="POST">
+            
+        
+           <h1> {% csrf_token %}</h1>
+           <label for="topic">Topic_name</label>
+
+
+           <select name="topic" id="topic">
+            {% for to in topic %}
+           <option value="{{to}}">{{to.tname}}</option>
+           {% endfor %}
+        </select>
+        <br>
+            
+            
+            <label for="n">name</label>
+            <input type="text" name="n" id="n"><br>
+            <label for="E">Email</label>
+            <input type="text" name="E" id="E"><br>
+            <label for="u">url</label>
+            <input type="text" name="u" id="u"><br>
+            <input type="submit" value="webpages">
+        </form>
+    </center>
+    
+</body>
+</html>
