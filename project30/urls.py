@@ -22,5 +22,9 @@ urlpatterns = [
     path('insert_topic/',insert_topic,name='insert_topic'),
     path('insert_webpages/',insert_webpages,name='insert_webpages'),
     path('insert_accessrecord/',insert_accessrecord,name='insert_accessrecord'),
+    path('retrieve_data/',retrieve_data,name='retrieve_data'),
+    path('checkbox/',checkbox,name='checkbox'),
+    path('radio/',radio,name='radio'),
+    
     
 ]

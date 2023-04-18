@@ -47,5 +47,28 @@ def insert_accessrecord(request):
     d={'topic':LOA}
     return render(request,'insert_accessrecord.html',d)
 
+def retrieve_data(request):
+    LTO=Topic.objects.all()
+    d={'topics':LTO}
+    if request.method=='POST':
+        td=request.POST.getlist('topic')
+        print(td)
+        webqueryset=Webpages.objects.none()
+
+        for i in td:
+            webqueryset=webqueryset|Webpages.objects.filter(tname=i)
+        d1={'Webpages':webqueryset}
+        return render(request,'dispaly_webpages.html',d1)
+    return render(request,'retrieve_data.html',d)
+
+def checkbox(request):
+    LTO=Topic.objects.all() 
+    d={'topics':LTO}
+    return render(request,'checkbox.html',d)
+
+def radio(request):
+    LTO=Topic.objects.all()
+    d={'topics':LTO}
+    return render(request,'radio.html',d)
 
 

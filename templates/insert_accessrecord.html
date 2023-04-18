@@ -11,9 +11,9 @@
         <h1>The Insert date in AccessRecord</h1>
         <form method="POST">
             <h1>{% csrf_token %}</h1>
-            <label for="topic">name</label>
+            <label for="name">name</label>
 
-            <select name="topic" id="name">
+            <select name="topic" id="name" >
                 {% for wo in topic %} 
                 <option value="{{wo}}">{{wo.name}}</option>
                 {% endfor %}
